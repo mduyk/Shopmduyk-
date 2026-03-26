@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Thanh toán</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+    margin:0;
+    font-family:Arial;
+    background: radial-gradient(circle,#020617,#000);
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.box{
+    background:#1e293b;
+    padding:25px;
+    width:360px;
+    border-radius:18px;
+    text-align:center;
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+    50%{transform:translateY(-6px);}
+}
+
+.price{
+    color:#22c55e;
+    font-weight:bold;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:20px;
+    background:#22c55e;
+    color:white;
+    margin-top:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2>Thanh toán</h2>
+
+    <p><b>Gói:</b> <span id="product"></span></p>
+    <p class="price"><span id="price"></span>đ</p>
+
+    <p><b>MB Bank</b></p>
+    <p>0588807300000</p>
+    <p>Cao Minh Duy</p>
+
+    <p><b>Nội dung:</b></p>
+    <p id="nd" style="color:#22c55e"></p>
+
+    <p style="font-size:13px;color:#fbbf24">
+        ⚠️ Để lại số điện thoại của bạn sau nội dung bank chính
+    </p>
+
+    <button onclick="alert('Đã ghi nhận!')">Tôi đã thanh toán</button>
+</div>
+
+<script>
+product.innerText = localStorage.getItem("product");
+price.innerText = localStorage.getItem("price");
+
+let nd = "MDUYK" + Math.floor(100000+Math.random()*900000);
+document.getElementById("nd").innerText = nd;
+</script>
+
+</body>
+</html>
